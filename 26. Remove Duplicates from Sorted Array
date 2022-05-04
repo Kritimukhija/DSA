@@ -1,0 +1,16 @@
+ int removeDuplicates(vector<int>& nums) {
+        if(nums.size()==0)
+            return 0;
+        int i=0,j;
+        
+        for(j=1;j<nums.size();j++)
+        {   //if the elements aren't same then increment i and store element present at j in i th position 
+            if(nums[j]!=nums[i])
+            {i++;
+            nums[i]=nums[j];}
+            
+        }
+        return i+1;
+        
+        
+    }
