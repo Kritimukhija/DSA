@@ -1,0 +1,14 @@
+void moveZeroes(vector<int>& a) {
+       //two pointer approach
+        int l=0,r=0;
+        while(r<=a.size()-1)
+        {
+            if(a[r]!=0)
+            {
+                swap(a[l],a[r]);
+                l++;
+            }
+            r++;
+        }
+        
+    }
