@@ -1,0 +1,12 @@
+int maxProfit(vector<int>& prices) {
+        int n=prices.size();
+        int MaxRight=prices[n-1];
+        int MaxProfit=0;
+        for(int i=n-2;i>=0;i--)
+        {
+            MaxRight=max(prices[i],MaxRight);
+            MaxProfit=max(MaxProfit,MaxRight-prices[i]);
+        }
+        return MaxProfit;
+        
+    }
