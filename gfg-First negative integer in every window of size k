@@ -1,0 +1,29 @@
+//using SLIDING WINDOW ALGORITHM
+vector<int> firstNegative(vector<int> A, int N, int K) {
+	
+	 vector<int>ans;
+                deque<int>list;
+                int i=0,j=0;
+                while(j<N){
+                    if(A[j]<0)
+                    list.push_back(A[j]);
+                    if(j-i+1 < K)
+                    {
+                        j++;
+                        continue;
+                    }
+
+                    else if(j-i+1 == K)
+                    {
+                        if(!list.empty())
+                        ans.push_back(list.front());
+                        else 
+						            {ans.push_back(0);}
+                        if(A[i]<0)
+						            {list.pop_front();}
+                        i++;
+                    }
+                  j++;
+                }
+                return ans;
+}
