@@ -1,0 +1,11 @@
+  int strStr(string haystack, string needle) {
+        int found = haystack.find( needle);
+        if(needle.empty())
+            return 0;
+ 
+    // Check if position is -1 or not
+        else if (found != string::npos) 
+          return (found);
+    
+        return -1;
+    }
