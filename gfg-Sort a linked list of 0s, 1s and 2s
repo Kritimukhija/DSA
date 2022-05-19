@@ -1,0 +1,29 @@
+    Node* segregate(Node *head) {
+     int count[3] = {0, 0, 0};
+    Node *t = head;
+ 
+   
+    while (t != NULL)
+    {
+        count[t->data] += 1;
+        t = t->next;
+    }
+ 
+    int i = 0;
+    t = head;
+ 
+   
+    while (t != NULL)
+    {
+        if (count[i] == 0)
+            ++i;
+        else
+        {
+            t->data = i;
+            --count[i];
+            t = t->next;
+        }
+    }
+    t=head;
+    return t;
+    }
