@@ -1,0 +1,26 @@
+string longestCommonPrefix(vector<string>& s) {
+        string ans= "";
+       //for transversing all characters of first element in array
+        
+        for(int i=0;i<s[0].size();i++ )
+        {
+            int ch=s[0][i];
+            bool match=true;
+            
+            //for comparing ch with rest of the array members.
+            for(int j=0;j<s.size();j++)
+            {
+                //not a match
+                if(s[j][i]!=ch || s[j].size()<i)
+                { match= false;
+                  break;
+                }
+                
+            }
+            if(match== false)
+                break;
+            else
+                ans.push_back(ch);
+        }
+    return ans;
+}
